@@ -1,0 +1,44 @@
+@import "~scut/dist/_scut.scss";
+@import "~susy/sass/susy";
+@import "~breakpoint-sass/stylesheets/_breakpoint.scss";
+
+// Global library import
+@import "~components/App/App.scss";
+
+.vcenter {
+	background-color : #e42;
+	@include container(1000px);
+}
+
+.outer {
+	@include breakpoint(60em){
+		@include span(6 of 7);
+	}
+	@include breakpoint(50em 60em){
+		@include span(2 of 5);
+	}
+	@include breakpoint(40em 50em){
+		@include span(2 of 3);
+	}
+	background-color : #eee;
+	text-align : center;
+	line-height : 8rem;
+	font-size : 1rem;
+	@include span(full);
+}
+
+.inner {
+	@include breakpoint(60em){
+		@include span(1 of 7 last);
+	}
+	@include breakpoint(50em 60em){
+		@include span(3 of 5 last);
+	}
+	@include breakpoint(40em 50em){
+		@include span(1 of 3 last);
+	}
+	background-color : #aaa;
+	text-align : center;
+	line-height : 8rem;
+	@include span(full);
+}
